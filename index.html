@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>Lab 1 - Three Interactive Circles</title>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 24px;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    label {
+      font-weight: 600;
+    }
+
+    button,
+    input,
+    select {
+      padding: 6px 8px;
+    }
+
+    canvas {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      background: #f3f4f6;
+      margin: 12px 0;
+      touch-action: none;
+      border: 1px solid #d1d5db;
+    }
+
+    #message {
+      min-height: 1.2em;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Three Interactive Circles</h1>
+
+  <div class="controls">
+
+    <label for="selected">Selected circle</label>
+
+    <select id="selected">
+      <option value="0">Circle 1</option>
+      <option value="1">Circle 2</option>
+      <option value="2">Circle 3</option>
+    </select>
+
+
+    <label for="color">Circle color</label>
+
+    <input
+      id="color"
+      type="color"
+      value="#2563eb"
+    >
+
+
+    <label for="speed">Horizontal speed</label>
+
+    <input
+      id="speed"
+      type="number"
+      min="0"
+      step="1"
+      value="120"
+    >
+
+    <button
+      id="apply"
+      type="button"
+    >
+      Apply
+    </button>
+
+
+    <button
+      id="toggle"
+      type="button"
+    >
+      Pause
+    </button>
+
+
+    <button
+      id="reset"
+      type="button"
+    >
+      Reset
+    </button>
+
+  </div>
+
+
+  <canvas
+    id="scene"
+    width="640"
+    height="360"
+    aria-label="Three animated circles"
+  >
+    This example requires a browser with canvas support.
+  </canvas>
+
+
+  <p id="status"></p>
+
+  <p id="message"></p>
+
+  <p>
+    Click or touch the canvas to place the selected circle.
+  </p>
+
+
+  <script
+    type="module"
+    src="./dist/main.js"
+  ></script>
+
+</body>
+
+</html>
